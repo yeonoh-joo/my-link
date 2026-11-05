@@ -1,26 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-serif: "Gowun Batang", serif;
+  --font-sans: "Gowun Dodum", -apple-system, BlinkMacSystemFont, sans-serif;
+  --linen-base: #FAF7F2;
+  --linen-card: #FFFDF9;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--linen-base);
+  color: #3F372E;
+  background-image: 
+    radial-gradient(#E5DAC8 0.8px, transparent 0.8px),
+    radial-gradient(#ECE4D4 0.8px, #FAF7F2 0.8px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* 프랑스 자수 스티치 테두리 효과 */
+.stitch-border {
+  border: 1.8px dashed #C8BCAC;
+  box-shadow: 0 4px 20px -2px rgba(85, 68, 48, 0.05), inset 0 0 0 4px rgba(255, 255, 255, 0.7);
+}
+
+/* 수틀(Embroidery Hoop) 프레임 느낌 */
+.hoop-shadow {
+  box-shadow: 
+    0 12px 36px -8px rgba(78, 59, 39, 0.09),
+    0 2px 6px -1px rgba(78, 59, 39, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.font-serif-custom {
+  font-family: var(--font-serif);
+}
+
+/* 린넨 패치 버튼 */
+.patch-btn {
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.patch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px -3px rgba(70, 52, 33, 0.12);
 }

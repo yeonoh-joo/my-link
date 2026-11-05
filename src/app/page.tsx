@@ -1,124 +1,294 @@
+import React from "react";
 import Image from "next/image";
 
-export default function Home() {
-  const profile = {
-    name: "주연오",
-    engName: "Yeonoh Joo",
-    role: "Software Developer",
-    tagline: "문제를 정의하고 코드로 가치를 만드는 개발자",
-    bio: "새로운 기술을 탐구하고 사용자에게 유의미한 경험을 제공하는 소프트웨어를 만듭니다. Next.js와 최신 AI 도구를 활용한 효율적인 개발 흐름에 관심이 많습니다.",
-    avatarUrl: "https://avatars.githubusercontent.com/u/188141192?v=4",
-    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Git"],
-    links: [
-      {
-        title: "GitHub 저장소 둘러보기",
-        url: "https://github.com/yeonoh-joo",
-        icon: "💻",
-        subtitle: "@yeonoh-joo",
-      },
-      {
-        title: "이메일로 연락하기",
-        url: "mailto:jooyeonoh3526777@gmail.com",
-        icon: "✉️",
-        subtitle: "jooyeonoh3526777@gmail.com",
-      },
-      {
-        title: "개발 블로그 (준비 중)",
-        url: "#",
-        icon: "📝",
-        subtitle: "학습 기록 및 기술 아카이브",
-      },
-      {
-        title: "포트폴리오 (준비 중)",
-        url: "#",
-        icon: "🚀",
-        subtitle: "진행했던 프로젝트 모음",
-      },
-    ],
+interface ChannelItem {
+  id: string;
+  number: string;
+  name: string;
+  handle: string;
+  url: string;
+  description: string;
+  tags: string[];
+  themeColor: string;
+  badgeBg: string;
+  accentBorder: string;
+  threadColor: string;
+  imageSrc: string;
+  popularVideo: {
+    id: string;
+    title: string;
   };
+}
+
+export default function Home() {
+  const channels: ChannelItem[] = [
+    {
+      id: "mongsweets",
+      number: "No. 01",
+      name: "몽중다과Mongsweets",
+      handle: "@mongsweets",
+      url: "https://youtube.com/@mongsweets",
+      description: "클레이와 레진으로 사실적인 음식 모형을 만드는채널. 밥과 찌개부터 달콤한 디저트까지 윤기와 질감을 완벽하게 재현하며, 식지 않는 따뜻한 밥상과 힐링을 전합니다.",
+      tags: ["#클레이아트", "#디저트모형", "#금손"],
+      themeColor: "#DE727F",
+      badgeBg: "#FDF0F2",
+      accentBorder: "rgba(222, 114, 127, 0.45)",
+      threadColor: "text-[#C95361]",
+      imageSrc: "/images/mongsweets.jpg",
+      popularVideo: {
+        id: "PlvmAtd0Qyc",
+        title: "Probably The Most Amazing Hot Pot You’ve Ever Seen",
+      },
+    },
+    {
+      id: "eueu_land",
+      number: "No. 02",
+      name: "으으냥",
+      handle: "@eueu_land",
+      url: "https://youtube.com/@eueu_land",
+      description: "시골에서 수많은 고양이들과 함께하는 채널. 시골 마당을 찾아오는 길고양이들과 구조된 16마리 다묘 가정의 냥글냥글한 일상을 영화 같은 감성 연출로 생생하게 담아냅니다.",
+      tags: ["#시골고양이", "#고양이대식구", "#생생한동물영상"],
+      themeColor: "#5E8C61",
+      badgeBg: "#EEF5EF",
+      accentBorder: "rgba(94, 140, 97, 0.45)",
+      threadColor: "text-[#48734B]",
+      imageSrc: "/images/eueu.jpg",
+      popularVideo: {
+        id: "HgAM1Wt7CVI",
+        title: "그날 이후 모든 것이 달라졌다.",
+      },
+    },
+    {
+      id: "sanago",
+      number: "No. 03",
+      name: "사나고 Sanago",
+      handle: "@sanago",
+      url: "https://youtube.com/@sanago",
+      description: "3D펜으로 이것저것 만드는 채널. 3D펜과 필라멘트 하나로 부서진 벽 수리부터 고퀄리티 피규어, 실제로 작동하는 기발한 소품까지 차분한 힐링 ASMR과 함께 빚어냅니다.",
+      tags: ["#3D펜장인", "#고퀄리티피규어", "#금손"],
+      themeColor: "#4F749B",
+      badgeBg: "#EFF5FB",
+      accentBorder: "rgba(79, 116, 155, 0.45)",
+      threadColor: "text-[#3B5B7D]",
+      imageSrc: "/images/sanago.png",
+      popularVideo: {
+        id: "sV6SiHEmWm4",
+        title: "1/10 크기로 마인크래프트 만들기",
+      },
+    },
+    {
+      id: "miniforest",
+      number: "No. 04",
+      name: "Mini Forest 미니포레스트",
+      handle: "@miniforest5508",
+      url: "https://youtube.com/@miniforest5508",
+      description: "미니어쳐 한옥에서 정교한 미니어쳐 요리하는 채널. 손수 제작한 전통 한옥과 너와집 마당 세트장에서 손톱만 한 조리도구로 한식을 빚어내는 리얼 미니어처 ASMR을 선보입니다.",
+      tags: ["#미니어쳐한옥", "#미니어쳐요리", "#정교한배경"],
+      themeColor: "#8C6843",
+      badgeBg: "#F9F4EC",
+      accentBorder: "rgba(140, 104, 67, 0.45)",
+      threadColor: "text-[#705232]",
+      imageSrc: "/images/miniforest.jpg",
+      popularVideo: {
+        id: "7G1XdFk85lI",
+        title: "가을 임산물 한 상🍂 | 미니어처 요리",
+      },
+    },
+    {
+      id: "smartmandoo",
+      number: "No. 05",
+      name: "교양만두",
+      handle: "@smartmandoo",
+      url: "https://youtube.com/@smartmandoo?si=kKCichipYhGdD5V0",
+      description: "흥미로운 B급 교양 채널. '지식이 고플 만두하지?'라는 슬로건과 함께, 일상 속 엉뚱하고 사소한 호기심을 귀여운 캐릭터 영상툰과 유쾌한 밈으로 쉽고 재미있게 풀어냅니다.",
+      tags: ["#B급교양", "#상식과역사", "#재치있는스토리"],
+      themeColor: "#D97724",
+      badgeBg: "#FDF5ED",
+      accentBorder: "rgba(217, 119, 36, 0.45)",
+      threadColor: "text-[#BA5F12]",
+      imageSrc: "/images/smartmandoo.png",
+      popularVideo: {
+        id: "gNP-sU5baYQ",
+        title: "조선시대로 회귀하면 생기는 일｜현대인이 조선에서 단 하루도 살 수 없는 이유",
+      },
+    },
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-950 dark:to-zinc-900 py-16 px-4 flex flex-col items-center justify-center font-sans">
-      <main className="w-full max-w-md bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-zinc-200/80 dark:border-zinc-800/80 flex flex-col items-center text-center">
-        {/* 프로필 이미지 영역 */}
-        <div className="relative mb-5 group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full blur opacity-50 group-hover:opacity-80 transition duration-300"></div>
-          <Image
-            src={profile.avatarUrl}
-            alt={profile.name}
-            width={100}
-            height={100}
-            className="relative rounded-full border-2 border-white dark:border-zinc-800 object-cover shadow-sm"
-            priority
-          />
-        </div>
-
-        {/* 이름 및 직무 */}
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 flex items-center gap-2">
-          {profile.name}
-          <span className="text-sm font-normal text-zinc-500 dark:text-zinc-400">
-            ({profile.engName})
+    <div className="min-h-screen py-12 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto flex flex-col items-center">
+      {/* 상단: 프랑스 자수 수틀(Embroidery Hoop) 감성의 헤더 */}
+      <header className="w-full text-center mb-12 sm:mb-16 relative">
+        {/* 장식용 자수 바늘과 실 그래픽 */}
+        <div className="flex items-center justify-center gap-2 mb-3 text-[#A89885]">
+          <span className="w-10 h-px border-b border-dashed border-[#B8A995]" />
+          <span className="text-xs tracking-widest uppercase font-mono px-2 py-0.5 rounded-full bg-[#F3ECE1] text-[#7A6A55] border border-[#DFD3C1]">
+            Channel Archive
           </span>
-        </h1>
-        <span className="mt-1 px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-950/60 rounded-full border border-blue-200 dark:border-blue-800/50">
-          {profile.role}
-        </span>
-
-        {/* 한 줄 슬로건 & 소개글 */}
-        <p className="mt-4 text-sm font-medium text-zinc-800 dark:text-zinc-200 leading-snug">
-          &ldquo;{profile.tagline}&rdquo;
-        </p>
-        <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-xs">
-          {profile.bio}
-        </p>
-
-        {/* 기술 스택 태그 */}
-        <div className="mt-4 flex flex-wrap justify-center gap-1.5 max-w-xs">
-          {profile.skills.map((skill) => (
-            <span
-              key={skill}
-              className="px-2 py-0.5 text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 rounded-md"
-            >
-              {skill}
-            </span>
-          ))}
+          <span className="w-10 h-px border-b border-dashed border-[#B8A995]" />
         </div>
 
-        {/* 링크 목록 */}
-        <div className="mt-6 w-full flex flex-col gap-3">
-          {profile.links.map((link) => (
-            <a
-              key={link.title}
-              href={link.url}
-              target={link.url.startsWith("http") ? "_blank" : undefined}
-              rel={link.url.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="w-full p-3.5 bg-zinc-50 hover:bg-zinc-100 dark:bg-zinc-800/50 dark:hover:bg-zinc-800 border border-zinc-200 dark:border-zinc-700/60 rounded-2xl flex items-center justify-between transition-all duration-200 hover:scale-[1.02] active:scale-[0.99] group shadow-sm hover:shadow"
-            >
-              <div className="flex items-center gap-3 text-left">
-                <span className="text-xl p-1.5 bg-white dark:bg-zinc-700 rounded-xl shadow-xs">
-                  {link.icon}
-                </span>
-                <div>
-                  <div className="text-sm font-semibold text-zinc-800 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    {link.title}
-                  </div>
-                  <div className="text-[11px] text-zinc-500 dark:text-zinc-400">
-                    {link.subtitle}
-                  </div>
+        {/* 린넨 패치에 수놓은 듯한 메인 타이틀 */}
+        <div className="inline-block relative">
+          {/* 모서리 자수 프렌치 너트 장식 */}
+          <span className="absolute -top-3 -left-3 w-2.5 h-2.5 rounded-full bg-[#DE727F] opacity-75 shadow-sm" />
+          <span className="absolute -top-3 -right-3 w-2.5 h-2.5 rounded-full bg-[#5E8C61] opacity-75 shadow-sm" />
+          <span className="absolute -bottom-3 -left-3 w-2.5 h-2.5 rounded-full bg-[#4F749B] opacity-75 shadow-sm" />
+          <span className="absolute -bottom-3 -right-3 w-2.5 h-2.5 rounded-full bg-[#BC7B32] opacity-75 shadow-sm" />
+
+          <div className="bg-[#FFFDF9] px-8 sm:px-12 py-5 rounded-3xl stitch-border hoop-shadow relative z-10">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#2E271F] font-serif-custom flex items-center justify-center gap-3">
+              <span className="text-[#DE727F] text-xl sm:text-2xl">🪡</span>
+              유튜브 채널 추천
+              <span className="text-[#5E8C61] text-xl sm:text-2xl">🧵</span>
+            </h1>
+            <p className="mt-2.5 text-sm sm:text-base text-[#6E6152] font-medium">
+              특별히 고르고 고른 유튜브 채널 모음
+            </p>
+          </div>
+        </div>
+
+        {/* 상단 린넨 밑단 러닝 스티치 라인 */}
+        <div className="mt-6 flex items-center justify-center gap-3 text-[#C8BCAC]">
+          <svg width="180" height="12" viewBox="0 0 180 12" fill="none">
+            <line x1="0" y1="6" x2="180" y2="6" stroke="#D1C5B5" strokeWidth="2" strokeDasharray="5 4" />
+            <circle cx="90" cy="6" r="3" fill="#DE727F" />
+            <circle cx="45" cy="6" r="2.5" fill="#5E8C61" />
+            <circle cx="135" cy="6" r="2.5" fill="#4F749B" />
+          </svg>
+        </div>
+      </header>
+
+      {/* 메인: 4개 추천 채널 리스트 (가로로 길어진 와이드 상자 & 온전한 16:9 영상 비율) */}
+      <main className="w-full flex flex-col gap-8">
+        {channels.map((channel) => (
+          <article
+            key={channel.id}
+            className="group relative bg-[#FFFDF9] rounded-3xl overflow-hidden hoop-shadow transition-all duration-300 hover:-translate-y-1 flex flex-col lg:flex-row items-stretch"
+            style={{
+              border: `2px dashed ${channel.accentBorder}`,
+            }}
+          >
+            {/* 카드 상단 우측 원목 단추 장식 디테일 */}
+            <div className="absolute top-3.5 right-3.5 z-20 flex items-center gap-1.5 pointer-events-none">
+              <div className="w-5 h-5 rounded-full bg-[#EADDCB] border border-[#CFBFAB] flex items-center justify-center shadow-inner">
+                <div className="w-2.5 h-2.5 flex flex-wrap justify-between p-0.5">
+                  <span className="w-0.5 h-0.5 rounded-full bg-[#8C7A65]" />
+                  <span className="w-0.5 h-0.5 rounded-full bg-[#8C7A65]" />
+                  <span className="w-0.5 h-0.5 rounded-full bg-[#8C7A65]" />
+                  <span className="w-0.5 h-0.5 rounded-full bg-[#8C7A65]" />
                 </div>
               </div>
-              <span className="text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-200 group-hover:translate-x-0.5 transition-transform text-xs">
-                →
-              </span>
-            </a>
-          ))}
-        </div>
+            </div>
 
-        {/* 푸터 */}
-        <footer className="mt-8 text-[11px] text-zinc-400 dark:text-zinc-500">
-          © {new Date().getFullYear()} {profile.name}. All rights reserved.
-        </footer>
+            {/* 좌측 면: 채널 소개 정보 (대표 사진 + 채널명 + 설명 + 태그 + 하단 계정/버튼) */}
+            <div className="flex-1 p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                {/* 상단: 대표 사진 엽서 패치 & 채널 타이틀 */}
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shrink-0 border-2 border-dashed border-[#D4C7B5] bg-[#F5EFE6] shadow-xs">
+                    <Image
+                      src={channel.imageSrc}
+                      alt={channel.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="80px"
+                    />
+                  </div>
+
+                  <div>
+                    <span
+                      className="text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider inline-block mb-1 border"
+                      style={{
+                        backgroundColor: channel.badgeBg,
+                        borderColor: channel.accentBorder,
+                        color: channel.themeColor,
+                      }}
+                    >
+                      {channel.number}
+                    </span>
+                    <h2 className="text-xl sm:text-2xl font-bold text-[#2A231C] font-serif-custom leading-tight">
+                      {channel.name}
+                    </h2>
+                  </div>
+                </div>
+
+                {/* 채널 소개 문구 */}
+                <p className="text-[#554A3E] text-sm sm:text-[15px] leading-relaxed mb-4 max-w-xl">
+                  {channel.description}
+                </p>
+
+                {/* 자수 태그 모음 */}
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {channel.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-2.5 py-1 rounded-lg bg-[#F5EFE6] text-[#695C4D] border border-[#E5DAC8] font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* 하단 영역: 원래 자리의 계정 아이디(@handle) + 채널 바로가기 직조 라벨 버튼 */}
+              <div className="pt-4 border-t border-dashed border-[#E8DEC8] flex items-center justify-between">
+                <span className="text-xs text-[#9B8C7A] font-mono">
+                  {channel.handle}
+                </span>
+
+                <a
+                  href={channel.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="patch-btn inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold text-white shadow-sm"
+                  style={{
+                    backgroundColor: channel.themeColor,
+                  }}
+                >
+                  <span>채널 바로가기</span>
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* 우측 면: 스케치대로 상자의 한 쪽 면 전체를 꽉 채우는 16:9 와이드 영상 영역 */}
+            <div className="w-full lg:w-[540px] xl:w-[600px] p-3 sm:p-4.5 bg-[#F7F2E9]/60 lg:border-l lg:border-dashed lg:border-[#E8DEC8] flex flex-col justify-center shrink-0">
+              <div className="flex items-center gap-1.5 mb-2 text-xs font-semibold text-[#665747]">
+                <span
+                  className="w-2 h-2 rounded-full inline-block"
+                  style={{ backgroundColor: channel.themeColor }}
+                />
+                <span>추천 대표 영상</span>
+              </div>
+
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden border-2 border-dashed border-[#D8CEBE] bg-black/5 shadow-sm">
+                <iframe
+                  src={`https://www.youtube.com/embed/${channel.popularVideo.id}`}
+                  title={channel.popularVideo.title}
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </article>
+        ))}
       </main>
+
+      {/* 하단 푸터: 실타래와 마무리 장식 */}
+      <footer className="mt-16 sm:mt-20 text-center text-xs text-[#8C7D6B] flex flex-col items-center gap-2">
+        <div className="flex items-center gap-2 text-[#C8BCAC]">
+          <span className="w-8 h-px border-b border-dashed border-[#C8BCAC]" />
+          <span>주연오의 마이링크</span>
+          <span className="w-8 h-px border-b border-dashed border-[#C8BCAC]" />
+        </div>
+        <p className="text-[#A39583]">
+          Curated by Yeonoh Joo
+        </p>
+      </footer>
     </div>
   );
 }
