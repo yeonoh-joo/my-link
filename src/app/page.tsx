@@ -28,7 +28,7 @@ export default function Home() {
       name: "몽중다과Mongsweets",
       handle: "@mongsweets",
       url: "https://youtube.com/@mongsweets",
-      description: "클레이와 레진으로 사실적인 음식 모형을 만드는채널. 밥과 찌개부터 달콤한 디저트까지 윤기와 질감을 완벽하게 재현하며, 식지 않는 따뜻한 밥상과 힐링을 전합니다.",
+      description: "클레이와 레진 등으로 음식과 디저트 모형을 만드는 채널.",
       tags: ["#클레이아트", "#디저트모형", "#금손"],
       themeColor: "#DE727F",
       badgeBg: "#FDF0F2",
@@ -46,7 +46,7 @@ export default function Home() {
       name: "으으냥",
       handle: "@eueu_land",
       url: "https://youtube.com/@eueu_land",
-      description: "시골에서 수많은 고양이들과 함께하는 채널. 시골 마당을 찾아오는 길고양이들과 구조된 16마리 다묘 가정의 냥글냥글한 일상을 영화 같은 감성 연출로 생생하게 담아냅니다.",
+      description: "시골 마을의 길고양이와 구조한 고양이들을 돌보는 일상을 담은 채널.",
       tags: ["#시골고양이", "#고양이대식구", "#생생한동물영상"],
       themeColor: "#5E8C61",
       badgeBg: "#EEF5EF",
@@ -64,7 +64,7 @@ export default function Home() {
       name: "사나고 Sanago",
       handle: "@sanago",
       url: "https://youtube.com/@sanago",
-      description: "3D펜으로 이것저것 만드는 채널. 3D펜과 필라멘트 하나로 부서진 벽 수리부터 고퀄리티 피규어, 실제로 작동하는 기발한 소품까지 차분한 힐링 ASMR과 함께 빚어냅니다.",
+      description: "3D펜으로 캐릭터 피규어와 다양한 소품을 만드는 채널.",
       tags: ["#3D펜장인", "#고퀄리티피규어", "#금손"],
       themeColor: "#4F749B",
       badgeBg: "#EFF5FB",
@@ -82,7 +82,7 @@ export default function Home() {
       name: "Mini Forest 미니포레스트",
       handle: "@miniforest5508",
       url: "https://youtube.com/@miniforest5508",
-      description: "미니어쳐 한옥에서 정교한 미니어쳐 요리하는 채널. 손수 제작한 전통 한옥과 너와집 마당 세트장에서 손톱만 한 조리도구로 한식을 빚어내는 리얼 미니어처 ASMR을 선보입니다.",
+      description: "작은 조리도구와 식재료로 실제 먹을 수 있는 미니어처 요리를 만드는 채널.",
       tags: ["#미니어쳐한옥", "#미니어쳐요리", "#정교한배경"],
       themeColor: "#8C6843",
       badgeBg: "#F9F4EC",
@@ -100,7 +100,7 @@ export default function Home() {
       name: "교양만두",
       handle: "@smartmandoo",
       url: "https://youtube.com/@smartmandoo?si=kKCichipYhGdD5V0",
-      description: "흥미로운 B급 교양 채널. '지식이 고플 만두하지?'라는 슬로건과 함께, 일상 속 엉뚱하고 사소한 호기심을 귀여운 캐릭터 영상툰과 유쾌한 밈으로 쉽고 재미있게 풀어냅니다.",
+      description: "역사, 문화, 일상 속 궁금증을 그림과 이야기로 풀어내는 교양 채널.",
       tags: ["#B급교양", "#상식과역사", "#재치있는스토리"],
       themeColor: "#D97724",
       badgeBg: "#FDF5ED",
@@ -142,7 +142,7 @@ export default function Home() {
               <span className="text-[#5E8C61] text-xl sm:text-2xl">🧵</span>
             </h1>
             <p className="mt-2.5 text-sm sm:text-base text-[#6E6152] font-medium">
-              특별히 고르고 고른 유튜브 채널 모음
+              특별히 엄선한 유튜브 채널 모음
             </p>
           </div>
         </div>
@@ -286,7 +286,7 @@ export default function Home() {
           <span className="w-8 h-px border-b border-dashed border-[#C8BCAC]" />
         </div>
         <p className="text-[#A39583]">
-          Curated by Yeonoh Joo
+          Here are some YouTube channel recommendations for you.
         </p>
       </footer>
     </div>
